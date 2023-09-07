@@ -1,0 +1,12 @@
+<h1>Je suis la page articles conseils</h1>
+
+
+
+<?php foreach($data as $post): ?>  
+ <h2><?= $post->getTitle(); ?></h2>
+       <img src="assets/front/img/<?= $post->getImage(); ?>">
+       <p><?=$post->getDescription(); ?></p>
+   
+
+                    
+<?php endforeach; ?>

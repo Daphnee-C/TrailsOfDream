@@ -1,0 +1,16 @@
+<h1>
+    Voici la page de listant les differentes randonnées 
+</h1>
+
+
+
+<?php foreach($data as $post): ?>  
+ <a href="?page=hikingDetails&subpage=<?= $post->getId(); ?>">
+     <h2><?= $post->getTitle(); ?></h2>
+</a>
+       <img src="assets/front/img/<?= $post->getImage(); ?>">
+       <p><?=$post->getDescription(); ?></p>
+   
+
+                    
+<?php endforeach; ?>
