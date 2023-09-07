@@ -5,7 +5,7 @@
 
 
 <?php foreach($data as $post): ?>  
- <a href="?page=hikingDetails&subpage=<?= $post->getId(); ?>">
+ <a href="hikingDetails/<?= $post->getId(); ?>">
      <h2><?= $post->getTitle(); ?></h2>
 </a>
        <img src="assets/front/img/<?= $post->getImage(); ?>">
