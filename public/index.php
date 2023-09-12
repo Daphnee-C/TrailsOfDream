@@ -1,5 +1,6 @@
 <?php
 require __DIR__.'/../vendor/autoload.php';
+session_start();
 
 const AVAIABLE_ROUTES = [
     'home'=>[
@@ -12,7 +13,7 @@ const AVAIABLE_ROUTES = [
     ],
     '404'=>[
         'action' => 'render',
-        'controller' => 'MainController'
+        'controller' => 'ErrorController'
     ],
     'hikingList'=>[
         'action' => 'renderHikingList',
@@ -26,9 +27,22 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderArticles',
         'controller' => 'ArticlesController'
     ],
+    'login'=>[
+        'action' => 'renderUser',
+        'controller' => 'UserController'
+    ],
+    'logout'=>[
+        'action' => 'renderUser',
+        'controller' => 'UserController'
+    ],
+    'register'=>[
+        'action' => 'renderUser',
+        'controller' => 'UserController'
+    ],
+    
     'admin'=>[
-        'action' => 'render',
-        'controller' => 'MainController'
+        'action' => 'renderAdmin',
+        'controller' => 'AdminController'
     ],
 ];
 

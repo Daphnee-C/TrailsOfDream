@@ -3,7 +3,7 @@
 
  <h1><?= $data->getTitle(); ?></h1>  
  
- <img src="assets/front/img/<?= $data->getImage(); ?>">
+ <img src="<?= $base_uri[0];?>/public/assets/front/img/<?= $data->getImage(); ?>">
  <p><?= $data->getDescription(); ?></p>
  <p><?= $data->getLevel(); ?> </p>
  <p><?= $data->getAscent(); ?> mètres</p>
@@ -12,6 +12,3 @@
  <p><?= $data->getPosition(); ?></p>
  
 
-  
-
-                    

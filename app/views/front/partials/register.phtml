@@ -1,0 +1,29 @@
+<h1>Je suis la page d'inscription</h1>
+
+
+ <?php if (isset($data)) {
+                            foreach ($data as $value) {
+                                echo $value;
+                            }
+                        } ?>
+     <form class="user" action="" method="post">
+                           
+                                
+<input type="text" name="firstname" class="" id="exampleFirstName" placeholder="Firstname" value="<?php if (!empty($_POST['firstname'])) {
+                                                                                                                                                                echo $_POST['firstname'];
+                                                                                                                                                            } ?>">
+                                                                                                                                                            
+                                                                                                                                                            
+<input type="text" name="lastname" class="" id="exampleLastName" placeholder="Lastname" value="<?php if (!empty($_POST['lastname'])) {
+                                                                                                                                                                echo $_POST['lastname'];
+                                                                                                                                                            } ?>">                               
+                            
+<input type="mail" name="mail" class="" id="exampleInputEmail" placeholder="Mail Address" value="<?php if (!empty($_POST['mail'])) {
+                                                                                                                                                                        echo $_POST['mail'];
+                                                                                                                                                                    } ?>">
+<input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                
+<input class="btn btn-primary" name="registerForm" type="submit" value="Envoyer">
+                        </form>
+                        
+<a class="small" href="/TrailsOfDream/public/login">Already have an account? Login!</a>                        

@@ -1,1 +1,26 @@
 <h1>Je suis la page admin</h1>
+
+
+ <?php
+if (isset($data['infos'])) {    
+    echo $data['infos'];
+}
+  ?>
+  
+<tbody>
+        <?php foreach ($data['posts'] as $key => $post) : ?>
+            <tr>
+              <td><?= $post->getTitle(); ?></td>
+              <td><img class="img-fluid" src="<?= $base_uri[0]; ?>/public/assets/front/img/<?= $post->getImage(); ?>" alt=""></td>
+              <td>
+                   <form class="" action="" method="post">
+                        <input type="hidden" name="postid" value="<?= $post->getId(); ?>">
+                        <input class="" name="deletePostForm" type="submit" value="Delete">
+                   </form>
+              </td>
+              <td>                                                                                                                    
+                 <a class="" href="<?= $base_uri[0]; ?>/public/admin/update/<?= $post->getId(); ?>">Update post</a>                                                        
+              </td>
+            </tr>
+<tbody/>
+        <?php endforeach ?>  
