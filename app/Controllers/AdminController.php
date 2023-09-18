@@ -151,6 +151,8 @@ class AdminController extends MainController
     
     public function removeUser(): void
     {
+       $currentUser = $user->getUserById();
+        if($currentUser->getRole()===1){
         $userId = filter_input(INPUT_POST, 'userListid', FILTER_SANITIZE_SPECIAL_CHARS);
         
         if (UserModel::deleteUser($userId)){
@@ -158,6 +160,11 @@ class AdminController extends MainController
         } else {
             $this->data['info'] = '<div class="alert alert-danger" role="alert">Il s\'est produit une erreur</div>';
         }
+        }
+        else {
+            $this->data['info'] = '<div class="alert alert-danger" role="alert">Il s\'est produit une erreur</div>'; 
+        }
+        
     }
 
 }

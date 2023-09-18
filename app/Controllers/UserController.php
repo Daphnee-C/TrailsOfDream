@@ -157,6 +157,17 @@ class UserController extends MainController
         // on redirige vers la home
         header('Location:' . $base_uri[0] . 'home');
     }
+    
+    
+    public function getCurrentUser(): void
+    {
+        $_SESSION['user_id'] = $user->getId(); 
+    
+    if ($errors > 0) {
+            $this->data[] = '<div class="alert alert-danger" role="alert">Impossible de récuperer le userID</div>';
+        }
+    }    
+   
 }
 
 
