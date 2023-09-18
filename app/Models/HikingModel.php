@@ -25,11 +25,12 @@ class HikingModel
 
 
     // méthode pour récupérer tous les articles, il est possible de spécifier une limite
-    public static function getPosts()
+    public static function getPosts(int $limit = null): array
     {
         // connexion pdo avec le pattern singleton
         $pdo = DataBase::connectPDO();
-        // s'il y'a un param limit
+        
+       
         $query = $pdo->prepare('SELECT * FROM hiking');
 
 
@@ -57,6 +58,70 @@ public static function getHikingById(int $id): ?HikingModel
          $post = null;
         }
         return $post;
+    }
+    
+    public function insertHiking(): bool
+    {
+        $pdo = DataBase::connectPDO();
+        $user_id = $_SESSION['user_id'];
+        $sql = "INSERT INTO `hiking`(`image`, `title`, `description`, `level`, `ascent`, `descent`, `duration`, `length`,`position`, `user_id`) 
+        VALUES (:image, :title, :description, :level, :ascent, :descent, :duration, :length, :position, :user_id)";
+    
+        $params = [
+            
+            'image' => $this->image,
+            'title' => $this->title,
+            'description' => $this->description,
+            'level' => $this->level,
+            'ascent' => $this->ascent,
+            'descent' => $this->descent,
+            'duration' => $this->duration,
+            'length' => $this->length,
+            'position' => $this->position,
+            'user_id' => $user_id
+        ];
+        $query = $pdo->prepare($sql);
+        $queryStatus = $query->execute($params);
+        return $queryStatus;
+    }
+    
+    public function updateHiking(): bool
+    {
+        $pdo = DataBase::connectPDO();
+        $user_id = $_SESSION['user_id'];
+        $sql = "UPDATE `hiking` SET `image` = :image, `title` = :title, `description` = :description, `level` = :level,
+        `ascent` = :ascent, `descent` = :descent, `duration` = :duration, `length` = :length,`position` = :position, `user_id` = :user_id 
+        WHERE `id` = :id";
+        
+        $params = [
+            'id' => $this->id,
+            'image' => $this->image,
+            'title' => $this->title,
+            'description' => $this->description,
+            'level' => $this->level,
+            'ascent' => $this->ascent,
+            'descent' => $this->descent,
+            'duration' => $this->duration,
+            'length' => $this->length,
+            'position' => $this->position,
+            'user_id' => $user_id
+        ];
+        
+        $query = $pdo->prepare($sql);
+        $queryStatus = $query->execute($params);
+        return $queryStatus;
+        
+    }
+    
+  
+     public static function deleteHiking(int $postId): bool
+    {
+        $pdo = DataBase::connectPDO();
+        $sql = 'DELETE FROM `hiking` WHERE id = :id';
+        $query = $pdo->prepare($sql);
+        $query->bindParam('id', $postId, PDO::PARAM_INT);
+        $queryStatus = $query->execute();
+        return $queryStatus;
     }
 
      public function getId()

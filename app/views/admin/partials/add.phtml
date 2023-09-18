@@ -1,1 +1,32 @@
-<h1>Je suis la page ajout de randonnée, j'ai un formulaire pour ajouter des randonées</h1>
+<h1 class="">Ajouter une randonnée</h1>
+
+
+<?php
+            // Si data n'est pas vide sur cette page, c'est qu'il y'a un message à afficher
+ if (isset($data)) {
+    foreach ($data as $key => $message) {
+    echo $message;
+   }
+ }
+?>
+     
+    <form class="" action="" method="post">
+    <input type="hidden" name="hikingid" value=""/>
+    
+    <input type="text" name="image" placeholder="nom de de l'image de la vignette (ex: nom.jpg)" class="" value="">
+    <!--<input type="file" id="image" name="image" accept="image/*">-->
+    <input type="text" name="title" class="" placeholder="Titre de l'article" value="">
+    <textarea name="description" id="" rows="10" class="" placeholder="Contenu de l'article "></textarea>
+    <input type="text" name="level" placeholder="Level"/>
+    <input type="number" name="ascent" placeholder="Ascent"/>
+    <input type="number" name="descent" placeholder="Descent"/>
+    <input type="number" name="duration" placeholder="Duration"/>
+    <input type="number" name="length" placeholder="Length"/>
+    <input type="text" name="position" placeholder="Position"/>
+                <!-- on n'oublie pas le name sur le bouton submit pour identifier le formulaire dans le AdminController  -->
+        <input type="submit" class="" name="addHikingForm" value="Créer l'article">
+            
+    </form>
+
+
+   

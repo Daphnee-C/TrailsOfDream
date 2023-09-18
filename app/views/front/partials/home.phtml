@@ -1,3 +1,25 @@
 <h1>Je suis l'acceuil</h1>
 
 
+<?php foreach($this->data['resultHikings'] as $post): ?>  
+<a href="hikingDetails/<?= $post->getId(); ?>">
+     <h2><?= $post->getTitle(); ?></h2>
+</a>
+       <img src="assets/front/img/<?= $post->getImage(); ?>">
+       <p><?=$post->getDescription(); ?></p>
+<?php endforeach; ?>
+
+
+
+<?php foreach( $this->data['resultArticles'] as $articles): ?>  
+
+<a <a href="articlesDetails/<?= $articles->getId(); ?>">
+     <h2><?= $articles->getTitle(); ?></h2>
+</a>     
+     <img src="assets/front/img/<?= $articles->getImage(); ?>">
+     <p><?=$articles->getDescription(); ?></p>
+
+<?php endforeach; ?>
+
+
+

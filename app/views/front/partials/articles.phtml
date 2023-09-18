@@ -2,10 +2,12 @@
 
 
 
-<?php foreach($data as $post): ?>  
- <h2><?= $post->getTitle(); ?></h2>
-       <img src="assets/front/img/<?= $post->getImage(); ?>">
-       <p><?=$post->getDescription(); ?></p>
+<?php foreach($data as $articles): ?> 
+<a href="articlesDetails/<?= $articles->getId(); ?>">
+ <h2><?= $articles->getTitle(); ?></h2>
+ </a>
+       <img src="assets/front/img/<?= $articles->getImage(); ?>">
+       <p><?=$articles->getDescription(); ?></p>
    
 
                     

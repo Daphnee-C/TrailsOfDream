@@ -5,7 +5,7 @@ use App\Models\UserModel;
 
 class UserController extends MainController
  {
-     
+   
  
  public function renderUser(): void
     {

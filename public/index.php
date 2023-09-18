@@ -8,8 +8,8 @@ const AVAIABLE_ROUTES = [
         'controller' => 'HomeController'
     ],
     'contact'=>[
-        'action' => 'render',
-        'controller' => 'MainController'
+        'action' => 'renderContact',
+        'controller' => 'ContactController'
     ],
     '404'=>[
         'action' => 'render',
@@ -26,6 +26,10 @@ const AVAIABLE_ROUTES = [
     'articles'=>[
         'action' => 'renderArticles',
         'controller' => 'ArticlesController'
+    ],
+    'articlesDetails'=>[
+        'action' => 'renderArticlesDetails',
+        'controller' => 'ArticlesDetailsController'
     ],
     'login'=>[
         'action' => 'renderUser',
@@ -44,6 +48,15 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderAdmin',
         'controller' => 'AdminController'
     ],
+        
+    'adminMessages'=>[
+        'action' => 'renderAdmin',
+        'controller' => 'AdminController'
+    ],
+    'adminUserList'=>[
+        'action' => 'renderAdmin',
+        'controller' => 'AdminController'
+    ],
 ];
 
 $page = 'home';
@@ -56,8 +69,8 @@ if(isset($_GET['page']) && !empty($_GET['page'])){
     if(!empty($_GET['subpage'])){
         $subPage = $_GET['subpage'];
     }
-var_dump($page);
-var_dump($subPage);
+/*var_dump($page);
+var_dump($subPage);*/
 }else{
     $page = 'home';     
 }

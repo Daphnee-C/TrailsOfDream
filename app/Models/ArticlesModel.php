@@ -27,6 +27,23 @@ class ArticlesModel
         return $articles;
     }
     
+    public static function getArticlesById($id): ?ArticlesModel
+    
+    {
+        $pdo = DataBase::connectPDO();
+        
+        $query = $pdo->prepare('SELECT * FROM articles WHERE id=:id');
+        
+        $query->bindParam(':id',$id);
+        $query->execute();
+        $query->setFetchMode(PDO::FETCH_CLASS, 'App\Models\ArticlesModel');
+        
+        $articles = $query->fetch();
+        if(!$articles){
+         $articles = null;
+        }
+        return $articles;
+    }
     
     
     
@@ -37,7 +54,7 @@ class ArticlesModel
     
     public function setId($id)
     {
-        $this->id= $id;
+        $this->id = $id;
     }
     
     public function getImage()

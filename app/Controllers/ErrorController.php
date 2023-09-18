@@ -9,6 +9,6 @@ class ErrorController extends MainController
     {
     $this->view = '404';
     http_response_code(404);
-    /*$this->render();*/
+    $this->render();
     }
 }

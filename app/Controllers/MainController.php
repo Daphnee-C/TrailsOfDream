@@ -20,12 +20,10 @@ class MainController
     {
         
         $base_uri = explode('/public/', $_SERVER['REQUEST_URI']);
-        var_dump($base_uri);
        
         
         $data = $this->data;
         // On construit la page 
-      var_dump($data);
         require __DIR__ . '/../views/' . $this->viewType . '/layouts/header.phtml';
         require __DIR__ . '/../views/' . $this->viewType . '/partials/' . $this->view . '.phtml';
         require __DIR__ . '/../views/' . $this->viewType . '/layouts/footer.phtml';

@@ -12,6 +12,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^hikingDetails/(\d+)/?$ index.php?page=hikingDetails&subpage=$1 [QSA,L]
 
+
+# Réécrire l'URL pour les pages de posts
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^articlesDetails/(\d+)/?$ index.php?page=articlesDetails&subpage=$1 [QSA,L]
+
 # Réécrire l'URL pour les pages d'administration
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

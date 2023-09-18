@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Trails of Dream</title>
-    <link rel="stylesheet" href ="./assets/front/css/style.css">
+    <link rel="stylesheet" href ="<?=$base_uri[0];?>/public/assets/style.css">
 </head>
 <body>
    
     <header>
-        <h2>Je suis le header de la page admin</h2>
+        <h1>Je suis le header de la page admin</h1>
   
     
     <nav>
@@ -25,17 +25,27 @@
     <ul>
      <li>
       <a href="/TrailsOfDream/public/home">Accueil</a>
-
-      <li>
-       <a href="/TrailsOfDream/public/add.phtml">Ajouter une randonnée</a>
+      </li>
+      
+       <li>
+      <a href="<?= $base_uri[0]; ?>/public/admin/">Accueil admin</a>
       </li>
       
       <li>
-       <a href="/TrailsOfDream/public/update.phtml">Modifier une randonnée</a>
+       <a href="<?= $base_uri[0]; ?>/public/admin/add/">Ajouter une randonnée</a>
       </li>
+      
+     
       <li>
-       <a href="/TrailsOfDream/public/contact">Contactez-nous</a>
+       <a href="<?= $base_uri[0]; ?>/public/adminMessages">Consulter les messages</a>
       </li>
+      
+      
+      <li>
+       <a href="<?= $base_uri[0]; ?>/public/adminUserList">Consulter la liste d'utilisateurs</a>
+      </li>
+      
+      <li> <a class="" href="<?= $base_uri[0]; ?>/public/logout">Déconnexion</a> </li>
     </ul>
     
      <h1>Trails of Dream</h1>

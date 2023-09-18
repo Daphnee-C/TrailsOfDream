@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use App\Utility\DataBase;
+use \PDO;
 
 
 class UserModel
@@ -54,6 +55,29 @@ class UserModel
         return $result;
     }
     
+    
+    public function getUsers(){
+    $pdo = DataBase::connectPDO();
+    
+    $sql = "SELECT * FROM users";
+
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        $users = $query->fetchAll(PDO::FETCH_CLASS,'App\Models\UserModel');
+        return $users;
+}
+
+     public static function deleteUser(int $userId): bool
+    {
+        $pdo = DataBase::connectPDO();
+        $sql = 'DELETE FROM `users` WHERE id = :id';
+        $query = $pdo->prepare($sql);
+        $query->bindParam('id', $userId, PDO::PARAM_INT);
+        $queryStatus = $query->execute();
+        return $queryStatus;
+    }
+    
+    
      public function getId(): int
     {
         return $this->id;
@@ -86,7 +110,7 @@ class UserModel
     
      public function getLastname(): string
     {
-        return $this->firstname;
+        return $this->lastname;
     }
 
     /**
@@ -100,7 +124,7 @@ class UserModel
     /**
      * Get the value of email
      */
-    public function getMmail(): string
+    public function getMail(): string
     {
         return $this->mail;
     }
