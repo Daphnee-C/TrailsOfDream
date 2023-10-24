@@ -17,7 +17,8 @@ class HomeController extends MainController
       $this->data = [];
       $this->data['resultHikings'] = HikingModel::getPosts();  
       $this->data['resultArticles'] = ArticlesModel::getArticles();
-      $this->data['resultUser'] = UserModel::getUserById(2);
+       $this->data['resultUser'] = UserModel::getUserById(2);
+      
       
        
         $this->render();

@@ -158,7 +158,6 @@ class UserController extends MainController
         header('Location:' . $base_uri[0] . 'home');
     }
     
-    
     public function getCurrentUser(): void
     {
         $_SESSION['user_id'] = $user->getId(); 
@@ -167,7 +166,6 @@ class UserController extends MainController
             $this->data[] = '<div class="alert alert-danger" role="alert">Impossible de récuperer le userID</div>';
         }
     }    
-   
 }
 
 

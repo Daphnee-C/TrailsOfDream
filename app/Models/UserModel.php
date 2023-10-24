@@ -77,16 +77,15 @@ class UserModel
         return $queryStatus;
     }
     
-    public static function getUserById($userId): ?array
+     public static function getUserById($userId): ?array
 {
-    var_dump($userId);
+   
     $pdo = DataBase::connectPDO();
     $sql = "SELECT * FROM `users` WHERE id = :userId";
     $query = $pdo->prepare($sql);
     $query->bindParam(':userId', $userId, PDO::PARAM_INT);
     $query->execute();
     $user = $query->fetch(PDO::FETCH_ASSOC);
-    var_dump($user);
     return $user;
 }
     

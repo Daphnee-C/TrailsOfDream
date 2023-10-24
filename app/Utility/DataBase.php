@@ -23,8 +23,8 @@ class DataBase
                 $configData['DB_PASSWORD'],
                 
             );
-            var_dump('connecté');
-           /* echo 'connecté';*/
+           /* var_dump('connecté');*/
+           
         } catch (\Exception $exception) {            
             // En cas d'échec de connexion, affichage de l'erreur et arrêt du script
             echo $exception->getMessage() . '<br>';                                    
