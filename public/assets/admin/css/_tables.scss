@@ -1,0 +1,82 @@
+.msgTable {
+    overflow-x: scroll;
+}
+
+
+table.customTable {
+    width: 80%;
+    min-width: 320px;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 0.1rem;
+    border-color: #30797A;
+    border-style: solid;
+    color: #000000;
+    text-align: center;
+    margin: auto;
+
+    img {
+        width: 100%;
+        height: 5rem;
+    }
+}
+
+table.customTable td,
+table.customTable th {
+    border-width: 0.1rem;
+    border-color: #30797A;
+    border-style: solid;
+    padding: 0.2rem;
+}
+
+table.customTable thead {
+    background-color: #30797A;
+}
+
+@media only screen and (max-width: 373px) {
+    table.customTable {
+        display: table-row;
+        font-size: 1em;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 372px) {
+    table.customTable {
+        display: table-row;
+        margin: auto;
+        font-size: 0.9em;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    table.customTable {
+        display: table-row;
+        margin: auto;
+        font-size: 0.7em;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    th,
+    td {
+        white-space: wrap;
+    }
+}

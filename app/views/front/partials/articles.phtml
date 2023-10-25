@@ -1,14 +1,25 @@
-<h1>Je suis la page articles conseils</h1>
-
-
-
-<?php foreach($data as $articles): ?> 
-<a href="articlesDetails/<?= $articles->getId(); ?>">
- <h2><?= $articles->getTitle(); ?></h2>
- </a>
-       <img src="assets/front/img/<?= $articles->getImage(); ?>">
-       <p><?=$articles->getDescription(); ?></p>
-   
-
-                    
-<?php endforeach; ?>
+<main class="container">
+  <article class="card">
+   <div class="bigCardBox">
+    <?php foreach($data as $articles): ?> 
+      <section class="littleCardBox">
+       <img src="assets/front/img/<?= $articles->getImage(); ?>" alt="photos paysages de montagne et forêt de l'ile de la Réunion">
+       <div class="midCardBox">
+        <a class="titleLink" href="articlesDetails/<?= $articles->getId(); ?>">
+          <h2><?= $articles->getTitle(); ?></h2>
+        </a>
+        <p><?php
+          $description = $articles->getDescription();
+          if(strlen($description) > 150) {
+              $description = substr($description, 0, 150).'...';
+          }
+          echo $description;
+          ?>
+         </p>
+        </div>
+        <a class="btnCard" href="articlesDetails/<?= $articles->getId(); ?>">Lire la suite</a>
+       </section>
+     <?php endforeach; ?>
+    </div>
+   </article>
+</main>

@@ -1,43 +1,38 @@
-<h1>Je suis la page reception des messages</h1>
-<?php var_dump($data['messages']); ?>
-<?php
-if (isset($data['infos'])) {    
- echo $data['infos'];
-}
-?>
-
-
-<table class="" id="dataTable" width="100%" cellspacing="0" role="grid" style="width: 100%;">
-    <thead>
-        <tr role="row">
-            <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="">name</th>
-            <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="" >mail</th>
-            <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="" >message</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th rowspan="1" colspan="1">name</th>
-            <th rowspan="1" colspan="1">mail</th>
-            <th rowspan="1" colspan="1">message</th>
-        </tr>
-    </tfoot>
-    <tbody>
-        <?php foreach ($data['messages'] as $key => $messages) : ?>
-        <tr>
-        <td><?= $messages->getName(); ?></td>
-        <td><a href="mailto:<?= $messages->getMail(); ?>"><?= $messages->getMail(); ?></a></td>
-        <td><?= $messages->getMessage(); ?></td>
-        
-        <td>
-    <form class="" action="" method="post">
-        <input type="hidden" name="contactid" value="<?= $messages->getId(); ?>">
-        <input class="" name="contactForm" type="submit" value="Supprimer">
-    </form>
-        </td>
-        <?php endforeach ?>
-</table>
-
-
-    
-
+<h1>Messages</h1>
+<main class="tableContainer">
+    <div class="card">
+        <div class="msgTable">
+            <?php ($data['messages']); ?>
+            <?php
+            if (isset($data['infos'])) {    
+             echo $data['infos'];
+            }
+            ?>
+            <table class="customTable">
+                <thead>
+                    <tr>
+                      <th>Nom</th>
+                      <th>Mail</th>
+                      <th>Messages</th>
+                      <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data['messages'] as $key => $messages) : ?>
+                    <tr>
+                        <td><?= $messages->getName(); ?></td>    
+                        <td><a href="mailto:<?= $messages->getMail(); ?>"><?= $messages->getMail(); ?></a></td>
+                        <td class="msg"><?= $messages->getMessage(); ?></td>
+                        <td>
+                            <form class="" action="" method="post">
+                                <input type="hidden" name="contactid" value="<?= $messages->getId(); ?>">
+                                <input class="" name="contactForm" type="submit" value="Supprimer">
+                            </form>
+                        </td>    
+                    </tr>
+                </tbody>
+                <?php endforeach ?>
+            </table>
+        </div>
+    </div>
+</main>

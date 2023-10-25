@@ -1,16 +1,60 @@
-<h1>
-    Voici la page de listant les differentes randonnées 
-</h1>
-
-
-
-<?php foreach($data as $post): ?>  
- <a href="hikingDetails/<?= $post->getId(); ?>">
-     <h2><?= $post->getTitle(); ?></h2>
-</a>
-       <img src="assets/front/img/<?= $post->getImage(); ?>">
-       <p><?=$post->getDescription(); ?></p>
-   
-
-                    
-<?php endforeach; ?>
+  <main class="container">
+    
+    <div class="slideshow-container">
+    
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="<?=$base_uri[0];?>/public/assets/front/img/slider/pNeige1.png" style="width:100%" alt="photos du Piton des Neiges de l'ile de la Réunion">
+          <div class="text">Piton des neiges</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="<?=$base_uri[0];?>/public/assets/front/img/slider/randoMer.png" style="width:100%" alt="photos d'une vue sur la côte de l'ile de la Réunion">
+          <div class="text">Mer</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="<?=$base_uri[0];?>/public/assets/front/img/slider/pNeiges.png" style="width:100%" alt="photos du Piton des Neiges de l'ile de la Réunion">
+          <div class="text">Piton des neiges</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    
+    
+    <article class="card">
+      <div class="bigCardBox">
+        <?php foreach($data as $post): ?> 
+          <section class="littleCardBox">
+            <img class="hikingImg" src="assets/front/img/<?= $post->getImage(); ?>" alt="photos paysages de montagne et forêt de l'ile de la Réunion">
+            <div class="midCardBox">
+              <a class="titleLink" href="hikingDetails/<?= $post->getId(); ?>">
+                <h2><?= $post->getTitle(); ?></h2>
+              </a>
+              <p><?php
+                 $description = $post->getDescription();
+                 if(strlen($description) > 110) {
+                     $description = substr($description, 0, 110).'...';
+                 }
+                 echo $description;
+                 ?>
+              </p>
+            </div>
+            <a class="btnCard" href="hikingDetails/<?= $post->getId(); ?>">Lire la suite</a>
+          </section>
+        <?php endforeach; ?>
+      </div>
+    </article>
+  </main>

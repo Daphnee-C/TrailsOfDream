@@ -46,7 +46,6 @@ class ArticlesModel
     }
     
     
-    
     public function getId()
     {
         return $this->id;
@@ -74,9 +73,6 @@ class ArticlesModel
        return $this->title;
    }
 
-   /**
-    * Set the value of date
-    */
    public function setTitle($title)
    {
        $this->title = $title;
@@ -98,9 +94,6 @@ class ArticlesModel
        return $this->description;
    }
 
-   /**
-    * Set the value of title
-    */
    public function setDescription($description)
    {
        $this->description = $description;
@@ -117,8 +110,6 @@ class ArticlesModel
        $this->user_id = $user_id;
    }
    
-   
-    
 }
 
    

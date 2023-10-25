@@ -1,4 +1,36 @@
-footer>h2 {
-    color: red;
-  /*text-decoration-line: underline;*/
+.footer {
+    width: 100%;
+    background-color: #30797A;
+}
+
+.ending {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.endCard {
+    width: 30%;
+    text-align: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+
+    .footer {
+        margin: 0;
+        width: 100%;
+        background-color: #30797A;
+    }
+
+    .ending {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .endCard {
+        width: 100%;
+        margin: 0.5rem;
+    }
+
 }

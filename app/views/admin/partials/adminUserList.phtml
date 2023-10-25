@@ -1,45 +1,41 @@
-<h1>Je suis la page qui liste les utilisateurs</h1>
-<?php var_dump($data['users']); ?>
-<?php
-if (isset($data['infos'])) {    
- echo $data['infos'];
-}
-?>
+<h1> liste des utilisateurs</h1>
 
-
-<table class=""  width="100%" style="text-align: center">
-    <thead>
-        <tr>
-            
-            <th class=""  aria-label="" >lastname</th>
-            <th class=""  aria-label="">firstname</th>
-            <th class=""  aria-label="" >mail</th>
-            <th class=""  aria-label="" >role</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            
-             <th>lastname</th>
-             <th>firstname</th>
-            <th>mail</th>
-            <th>role</th>
-            
-        </tr>
-    </tfoot>
-    <tbody>
-        <?php foreach ($data['users'] as $key => $users) : ?>
-        <tr>
-        <td><?= $users->getLastname(); ?></td>    
-        <td><?= $users->getFirstname(); ?></td>
-        <td><?= $users->getMail(); ?></td>
-        <td><?= $users->getRole(); ?></td>
-        
-        <td>
-    <form class="" action="" method="post">
-        <input type="hidden" name="userListid" value="<?= $users->getId(); ?>">
-        <input class="" name="userListForm" type="submit" value="Supprimer">
-    </form>
-        </td>
-        <?php endforeach ?>
-</table>
+<main class="tableContainer">
+    <div class="card">
+        <div class="msgTable">
+    
+            <?php ($data['users']); ?>
+            <?php
+            if (isset($data['infos'])) {    
+             echo $data['infos'];
+            }
+            ?>
+            <table class="customTable">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data['users'] as $key => $users) : ?>
+                    <tr>
+                    <td><?= $users->getLastname(); ?></td>    
+                    <td><?= $users->getFirstname(); ?></td>
+                    <td><?= $users->getMail(); ?></td>
+                    <td><?= $users->getRole(); ?></td>
+                    
+                    <td>
+                        <form class="" action="" method="post">
+                            <input type="hidden" name="userListid" value="<?= $users->getId(); ?>">
+                            <input class="" name="userListForm" type="submit" value="Supprimer">
+                        </form>
+                    </td>
+                    <?php endforeach ?>
+            </table>
+        </div>
+    </div>
+</main>        

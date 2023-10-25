@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 1rem;
   transition: all 0.4s;
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
@@ -141,7 +142,30 @@
   transform: rotate3d(0, 0, 1, -20deg);
 }
 
-/* Home section */
+.space {
+  height: 65px;
+}
+
+.spaceArt {
+  /*height: 15px;*/
+  margin-bottom: 1em;
+}
+
+h3 {
+  color: #fff;
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin: 0.3em 0em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Accueil*/
 .home {
   width: 100%;
   height: 100vh;
@@ -196,27 +220,145 @@
 .footer {
   width: 100%;
   background-color: #30797A;
-  border: 2px solid black;
-}
-.footer h2 {
-  color: white;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+.ending {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.endCard {
+  width: 30%;
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
   .footer {
     margin: 0;
     width: 100%;
     background-color: #30797A;
   }
+  .ending {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .endCard {
+    width: 100%;
+    margin: 0.5rem;
+  }
 }
-footer > h2 {
-  color: red;
-  /*text-decoration-line: underline;*/
+.footer {
+  width: 100%;
+  background-color: #30797A;
 }
 
-header > h1 {
-  color: DodgerBlue;
-  text-decoration-line: underline;
+.ending {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.endCard {
+  width: 30%;
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .footer {
+    margin: 0;
+    width: 100%;
+    background-color: #30797A;
+  }
+  .ending {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .endCard {
+    width: 100%;
+    margin: 0.5rem;
+  }
+}
+.msgTable {
+  overflow-x: scroll;
+}
+
+table.customTable {
+  width: 80%;
+  min-width: 320px;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 0.1rem;
+  border-color: #30797A;
+  border-style: solid;
+  color: #000000;
+  text-align: center;
+  margin: auto;
+}
+table.customTable img {
+  width: 100%;
+  height: 5rem;
+}
+
+table.customTable td,
+table.customTable th {
+  border-width: 0.1rem;
+  border-color: #30797A;
+  border-style: solid;
+  padding: 0.2rem;
+}
+
+table.customTable thead {
+  background-color: #30797A;
+}
+
+@media only screen and (max-width: 373px) {
+  table.customTable {
+    display: table-row;
+    font-size: 1em;
+    overflow-x: auto;
+  }
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 372px) {
+  table.customTable {
+    display: table-row;
+    margin: auto;
+    font-size: 0.9em;
+    overflow-x: auto;
+  }
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 350px) {
+  table.customTable {
+    display: table-row;
+    margin: auto;
+    font-size: 0.7em;
+  }
+  table.customTable img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  th,
+  td {
+    white-space: wrap;
+  }
+}
+.container,
+.tableContainer {
+  max-width: 1300px;
+  max-height: auto;
+  margin: auto;
+  padding: 10px;
 }
 
 .user {
@@ -224,7 +366,7 @@ header > h1 {
   border-radius: 1rem;
   height: 100%;
   width: 80%;
-  margin: 8rem auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,6 +387,12 @@ header > h1 {
   opacity: 3;
 }
 
+@media only screen and (max-width: 330px) {
+  input,
+  textarea {
+    font-size: 0.9rem;
+  }
+}
 /*CONTAINER CONTENU PRINCIPAL ET FORMULAIRES*/
 .container,
 .formContainer {
@@ -252,6 +400,23 @@ header > h1 {
   max-height: auto;
   margin: auto;
   padding: 10px;
+}
+.container .logDiv,
+.formContainer .logDiv {
+  margin: 2em auto;
+  width: 100%;
+}
+.container .logDiv .btnLog,
+.formContainer .logDiv .btnLog {
+  text-decoration: none;
+  font-size: 1em;
+  color: #000000;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  background-color: #30797A;
+  color: #fff;
 }
 
 /*CAROUSSEL SUR PAGE HICKING LIST*/
@@ -265,9 +430,9 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: auto;
+  max-width: 45em;
+  margin: auto;
   position: relative;
-  margin: 4rem 0rem 0rem 0rem;
 }
 
 /* Boutons precedent et suivant */
@@ -353,36 +518,26 @@ img {
 /*CARDS POUR LES RANDONNÉES*/
 .card {
   padding: 1rem;
-  margin-top: 4rem;
+  margin-top: 0.5rem;
   border: #44476a;
   font-size: 0.875rem;
   border: 0.0625rem solid #d1d9e6;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
   border-radius: 0.55rem;
   background-color: #e6e7ee;
+  object-fit: cover;
+  object-position: bottom;
 }
-
-.ellipsis {
+.card img {
   width: 100%;
   height: auto;
-  overflow: hidden;
-  white-space: wrap;
-  height: 3em;
-  /* Hauteur équivalente à deux lignes de texte */
-  line-height: 1em;
-  /* Espacement entre les lignes de texte */
-  /*text-overflow: ellipsis;*/
+  object-fit: cover;
+}
+.card p {
+  text-align: justify;
 }
 
-/*.hikingImg {
-
-    width: 150px;
-    height: 150px;
-
-}
-*/
 .bigCardBox {
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -391,8 +546,6 @@ img {
 }
 
 .littleCardBox {
-  /*width: 30%;*/
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   width: 18em;
@@ -400,24 +553,51 @@ img {
   justify-content: space-evenly;
   align-items: flex-start;
   margin: 1rem auto;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+  border-radius: 0.55rem;
 }
 .littleCardBox img {
   width: 100%;
-  height: 15rem;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.55rem 0.55rem 0rem 0rem;
 }
-.littleCardBox a {
+.littleCardBox .titleLink {
   text-decoration: none;
-  font-size: 0.8em;
+  color: #000000;
+}
+.littleCardBox .midCardBox {
+  padding: 0.5em;
+}
+.littleCardBox .midCardBox p {
+  text-align: justify;
+}
+.littleCardBox .btnCard {
+  text-decoration: none;
+  font-size: 1em;
   color: #000000;
   text-align: center;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  background-color: #30797A;
+  color: #fff;
 }
 
 /* CAROUSSEL */
-@media only screen and (max-width: 300px) {
-  .prev,
-  .next,
-  .text {
-    font-size: 11px;
+@media only screen and (max-width: 330px) {
+  .input,
+  textarea {
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-weight: bolder;
+    color: #000000;
+    margin: 1em 0em 1em 0;
+  }
+  .input ::placeholder,
+  textarea ::placeholder {
+    color: #000000;
+    opacity: 3;
   }
 }
 

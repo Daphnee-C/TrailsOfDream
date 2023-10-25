@@ -11,22 +11,8 @@ class ArticlesController extends MainController {
     public function renderArticles() {
 
         $this->data = ArticlesModel::getArticles();
-        // on appelle la méthode render du MainController qui construit la page
+        // Méthode render du MainController qui construit la page
         $this->render();
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

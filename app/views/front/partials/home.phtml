@@ -1,27 +1,49 @@
-<h1>Je suis l'acceuil</h1>
-
-
-<?php foreach($this->data['resultHikings'] as $post): ?>  
-<a href="hikingDetails/<?= $post->getId(); ?>">
-     <h2><?= $post->getTitle(); ?></h2>
-</a>
-       <img src="assets/front/img/<?= $post->getImage(); ?>">
-       <p><?=$post->getDescription(); ?></p>
-       <p>écrit par <?= isset($this->data['resultUser']['firstname']) ? $this->data['resultUser']['firstname'] : ''; ?></p>
-      
-<?php endforeach; ?>
-
-
-
-<?php foreach( $this->data['resultArticles'] as $articles): ?>  
-
-<a <a href="articlesDetails/<?= $articles->getId(); ?>">
-     <h2><?= $articles->getTitle(); ?></h2>
-</a>     
-     <img src="assets/front/img/<?= $articles->getImage(); ?>">
-     <p><?=$articles->getDescription(); ?></p>
-
-<?php endforeach; ?>
-
-
-
+<main class="container">
+     <article class="card">
+          <div class="bigCardBox">
+               <?php foreach($this->data['resultHikings'] as $post): ?>
+               <section class="littleCardBox">
+                    <img class="hikingImg" src="assets/front/img/<?= $post->getImage(); ?>" alt="photos paysages de montagne et forêt de l'ile de la Réunion">
+                    <div class="midCardBox">
+                         <a class="titleLink" href="hikingDetails/<?= $post->getId(); ?>">
+                              <h2><?= $post->getTitle(); ?></h2>
+                         </a>
+                         <p><?php
+                             $description = $post->getDescription();
+                             if(strlen($description) > 110) {
+                                 $description = substr($description, 0, 110).'...';
+                             }
+                             echo $description;
+                             ?>
+                         </p>
+                   </div>
+                   <a class="btnCard" href="hikingDetails/<?= $post->getId(); ?>">Lire la suite</a>
+               </section>
+               <?php endforeach; ?>
+          </div>
+     </article>
+     
+     <article class="card">
+         <div class="bigCardBox">
+               <?php foreach( $this->data['resultArticles'] as $articles): ?> 
+               <section class="littleCardBox">
+                    <img class="hikingImg" src="assets/front/img/<?= $articles->getImage(); ?>" alt="photos paysages de montagne et forêt de l'ile de la Réunion">
+                    <div class="midCardBox">
+                         <a class="titleLink" href="articlesDetails/<?= $articles->getId(); ?>">
+                              <h2><?= $articles->getTitle(); ?></h2>
+                         </a>   
+                         <p><?php
+                             $description = $articles->getDescription();
+                             if(strlen($description) > 150) {
+                                 $description = substr($description, 0, 150).'...';
+                             }
+                             echo $description;
+                             ?>
+                         </p>
+                   </div>
+                   <a class="btnCard" href="articlesDetails/<?= $articles->getId(); ?>">Lire la suite</a>
+               </section>
+               <?php endforeach; ?>
+          </div>
+     </article>
+</main>

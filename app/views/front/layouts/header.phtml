@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trails of Dream</title>
-    <link rel="stylesheet" href ="<?=$base_uri[0];?>/public/assets/main-css/style.css">
+    <link rel="icon" type="image/x-icon" href="<?=$base_uri[0];?>/public/assets/LogoTofD.png">
+    <link rel="stylesheet" href ="<?=$base_uri[0];?>/public/assets/style.min.css">
 </head>
 
 <body>       
     <header>
-        <nav>
-            <a href="/TrailsOfDream/public/home"> <img src="<?=$base_uri[0];?>/public/assets/front/img/LogoTofD.png" alt="logo de Trails of Dream" width="50" height="50"></a>
-            <ul class="navList">
-              <li><a href="/TrailsOfDream/public/home">Accueil</a></li>
-              <li><a href="/TrailsOfDream/public/hikingList">Nos randonnées</a></li>
-              <li><a href="/TrailsOfDream/public/articles">Nos articles</a></li>
-              <li><a href="/TrailsOfDream/public/articlesDetails">Nos détails d'articles</a></li>
-              <li><a href="/TrailsOfDream/public/contact">Contactez-nous</a></li>
-              <li><a href="/TrailsOfDream/public/login">Connexion</a></li>
-              <li><a href="/TrailsOfDream/public/register">Inscription</a></li>
-            </ul>
+        <nav class="nav">
+            <div class="navContainer">
+                <div class="logo">
+                    <a href="/TrailsOfDream/public/home"> 
+                        <img src="<?=$base_uri[0];?>/public/assets/front/img/LogoTofD.png" alt="logo de Trails of Dream" width="50" height="50">
+                    </a>
+                </div>
+                <div class="navList" id="mainNavList">
+                    <ul>
+                      <li><a href="/TrailsOfDream/public/home">Accueil</a></li>
+                      <li><a href="/TrailsOfDream/public/hikingList">Randonnées</a></li>
+                      <li><a href="/TrailsOfDream/public/articles">Conseils</a></li>
+                      <li><a href="/TrailsOfDream/public/contact">Contact</a></li>
+                      <li><a href="/TrailsOfDream/public/login">Connexion</a></li>
+                      <li><a href="/TrailsOfDream/public/register">Inscription</a></li>
+                    </ul>
+                </div>
+                
+                <div class="navButton">
+                        <button class="mainNavButton" id="navMediaButton">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                </div>
+            </div>
          </nav>
-                <img src="../public/assets/front/img/imgHeader.jpg" alt="image header d'un paysage de la Réunion"></img>
+         <div class="space"></div>
     </header>
-
- 

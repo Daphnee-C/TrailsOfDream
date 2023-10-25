@@ -40,6 +40,30 @@ public function getMessages(){
         $messages = $query->fetchAll(PDO::FETCH_CLASS,'App\Models\ContactModel');
         return $messages;
 }
+
+
+ public static function deleteMessage(int $contactId): bool
+    {
+        $pdo = DataBase::connectPDO();
+        $sql = 'DELETE FROM `contact` WHERE id = :id';
+        $query = $pdo->prepare($sql);
+        $query->bindParam('id', $contactId, PDO::PARAM_INT);
+        $queryStatus = $query->execute();
+        return $queryStatus;
+    }
+    
+    public static function getMessageById($userId): ?array
+{
+   
+    $pdo = DataBase::connectPDO();
+    $sql = "SELECT * FROM `users` WHERE id = :userId";
+    $query = $pdo->prepare($sql);
+    $query->bindParam(':userId', $userId, PDO::PARAM_INT);
+    $query->execute();
+    $user = $query->fetch(PDO::FETCH_ASSOC);
+    return $user;
+}
+    
     
     public function getId(): int
         {
@@ -81,6 +105,5 @@ public function getMessages(){
     {
         $this->message = $message;
     }
-
 
 }

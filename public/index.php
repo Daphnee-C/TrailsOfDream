@@ -12,7 +12,7 @@ const AVAIABLE_ROUTES = [
         'controller' => 'ContactController'
     ],
     '404'=>[
-        'action' => 'render',
+        'action' => 'renderError',
         'controller' => 'ErrorController'
     ],
     'hikingList'=>[
@@ -57,6 +57,10 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderAdmin',
         'controller' => 'AdminController'
     ],
+    'confidentialite'=>[
+        'action' => 'renderConfidentialite',
+        'controller' => 'ConfidentialiteController'
+    ],
 ];
 
 $page = 'home';
@@ -69,8 +73,7 @@ if(isset($_GET['page']) && !empty($_GET['page'])){
     if(!empty($_GET['subpage'])){
         $subPage = $_GET['subpage'];
     }
-/*var_dump($page);
-var_dump($subPage);*/
+
 }else{
     $page = 'home';     
 }
@@ -82,6 +85,7 @@ if(array_key_exists($page,AVAIABLE_ROUTES)){
 }else{
     // si la route ne correspond pas, on appelle ErrorController
     $controller = 'ErrorController';
+    $controllerAction = 'renderError';
 }
 
 $namespace = 'App\Controllers';

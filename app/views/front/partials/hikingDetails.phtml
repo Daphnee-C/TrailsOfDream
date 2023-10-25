@@ -1,14 +1,17 @@
-<h1>Je suis la page de détail de la randonnée</h1>
-
-
- <h1><?= $data->getTitle(); ?></h1>  
- 
- <img src="<?= $base_uri[0];?>/public/assets/front/img/<?= $data->getImage(); ?>">
- <p><?= $data->getDescription(); ?></p>
- <p><?= $data->getLevel(); ?> </p>
- <p><?= $data->getAscent(); ?> mètres</p>
- <p><?= $data->getDuration(); ?> heures</p>
- <p><?= $data->getLength(); ?> km</p>
- <p><?= $data->getPosition(); ?></p>
- 
+<main class="container">
+    <div class="card">
+      <h1><?= $data->getTitle(); ?></h1>
+      <div class="spaceArt"></div>
+      <img src="<?= $base_uri[0];?>/public/assets/front/img/<?= $data->getImage(); ?>" alt="photos paysages de montagne et forêt de l'ile de la Réunion">
+      <div class="spaceArt"></div>
+      <p><?= $data->getDescription(); ?></p>
+      <div class="spaceArt"></div>
+      <p>Difficultée : <?= $data->getLevel(); ?> </p>
+      <p>Dénivelé positif : <?= $data->getAscent(); ?> mètres</p>
+      <p>Dénivelé négatif : <?= $data->getDescent(); ?> mètres</p>
+      <p>Durée : <?= $data->getDuration(); ?> heures</p>
+      <p>Distance : <?= $data->getLength(); ?> km</p>
+      <p>Point de départ : <?= $data->getPosition(); ?></p>
+    </div>
+</main>
 

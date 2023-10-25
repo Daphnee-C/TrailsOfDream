@@ -12,7 +12,7 @@ class HikingDetailsController extends MainController
 public function renderHikingDetails(): void
     {
         $this->data =  HikingModel::getHikingById($this->subPage);
-        // on construit la page
+        // Construction la page
         $this->render();
     }
 }

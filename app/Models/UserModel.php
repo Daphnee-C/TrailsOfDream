@@ -95,87 +95,56 @@ class UserModel
         return $this->id;
     }
 
-    /**
-     * Set the value of id
-     */
     public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * Get the value of name
-     */
     public function getFirstname(): string
     {
         return $this->firstname;
     }
 
-    /**
-     * Set the value of name
-     */
     public function setFirstname(string $firstname): void
     {
         $this->firstname = $firstname;
     }
-    
     
      public function getLastname(): string
     {
         return $this->lastname;
     }
 
-    /**
-     * Set the value of name
-     */
     public function setLastname(string $lastname): void
     {
         $this->lastname = $lastname;
     }
 
-    /**
-     * Get the value of email
-     */
     public function getMail(): string
     {
         return $this->mail;
     }
 
-    /**
-     * Set the value of email
-     */
     public function setMail(string $mail): void
     {
         $this->mail = $mail;
     }
 
-    /**
-     * Get the value of password
-     */
     public function getPassword(): string
     {
         return $this->password;
     }
 
-    /**
-     * Set the value of password
-     */
     public function setPassword(string $password): void
     {
         $this->password = $password;
     }
 
-    /**
-     * Get the value of role
-     */
     public function getRole(): int
     {
         return $this->role;
     }
 
-    /**
-     * Set the value of role
-     */
     public function setRole(int $role): void
     {
         $this->role = $role;

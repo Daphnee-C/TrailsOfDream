@@ -1,29 +1,28 @@
-<h1>Je suis la page d'inscription</h1>
+<main class="formContainer">
 
-
- <?php if (isset($data)) {
-                            foreach ($data as $value) {
-                                echo $value;
-                            }
-                        } ?>
-     <form class="user" action="" method="post">
-                           
-                                
-<input type="text" name="firstname" class="" id="exampleFirstName" placeholder="Firstname" value="<?php if (!empty($_POST['firstname'])) {
-                                                                                                                                                                echo $_POST['firstname'];
-                                                                                                                                                            } ?>">
-                                                                                                                                                            
-                                                                                                                                                            
-<input type="text" name="lastname" class="" id="exampleLastName" placeholder="Lastname" value="<?php if (!empty($_POST['lastname'])) {
-                                                                                                                                                                echo $_POST['lastname'];
-                                                                                                                                                            } ?>">                               
-                            
-<input type="mail" name="mail" class="" id="exampleInputEmail" placeholder="Mail Address" value="<?php if (!empty($_POST['mail'])) {
-                                                                                                                                                                        echo $_POST['mail'];
+    <?php if (isset($data)) {
+    foreach ($data as $value) {
+    echo $value;
+    }
+    } ?>
+    <form class="user" method="post">
+        <h3>Inscription</h3>        
+        <input type="text" name="firstname" class=""  placeholder="Prénom" value="<?php if (!empty($_POST['firstname'])) {
+                                                                                                                                                                        echo $_POST['firstname'];
                                                                                                                                                                     } ?>">
-<input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                                
-<input class="btn btn-primary" name="registerForm" type="submit" value="Envoyer">
-                        </form>
-                        
-<a class="small" href="/TrailsOfDream/public/login">Already have an account? Login!</a>                        
+                                                                                                                                                                    
+        <input type="text" name="lastname" class=""  placeholder="Nom" value="<?php if (!empty($_POST['lastname'])) {
+                                                                                                                                                                        echo $_POST['lastname'];
+                                                                                                                                                                    } ?>">                               
+                                    
+        <input type="email" name="mail" class="" placeholder="Mail" value="<?php if (!empty($_POST['mail'])) {
+                                                                                                                                                                                echo $_POST['mail'];
+                                                                                                                                                                            } ?>">
+        <input type="password" name="password"  placeholder="Mot de passe">
+                                        
+        <input class="btn btn-primary" name="registerForm" type="submit" value="Envoyer">
+    </form>
+    <div class="logDiv">
+        <a class="btnLog" href="/TrailsOfDream/public/login">Déjà membre? Connexion!</a>  
+    </div>
+</main>

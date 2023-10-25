@@ -35,12 +35,10 @@ class ContactController extends MainController
          
          
          if ($contactModel->insertMessage()){
-             $this->data[] = '<div class="alert alert-success" role="alert">Message envoyé avec succès</div>';
+             $this->data[] = '<div class="alertSuccess" role="alert">Message envoyé avec succès</div>';
          } else {
-             $this->data[] = '<div class="alert alert-danger" role="alert">Il s\'est produit une erreur</div>';
+             $this->data[] = '<div class="alertDanger" role="alert">Il s\'est produit une erreur</div>';
          }
     }
-    
-    
     
 }

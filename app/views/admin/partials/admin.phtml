@@ -1,44 +1,37 @@
-<h1>Je suis la page admin</h1>
-
-<?php
-if (isset($data['infos'])) {    
- echo $data['infos'];
-}
-?>
-
-
-<table width="100%" role="grid" style="width: 100%;">
-    <thead>
-        <tr>
-            <th>title</th>
-            <th>duration</th>
-            <th>image</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th rowspan="1" colspan="1">title</th>
-            <th rowspan="1" colspan="1">duration</th>
-            <th rowspan="1" colspan="1">image</th>
-        </tr>
-    </tfoot>
-    <tbody>
-        <?php foreach ($data['posts'] as $key => $post) : ?>
-        <tr>
-        <td><?= $post->getTitle(); ?></td>
-        <td><?= $post->getDuration(); ?></td>
-        <td><img class="" src="<?= $base_uri[0]; ?>/public/assets/front/img/<?= $post->getImage(); ?>" alt=""></td>
-        <td>
-    <form class="" action="" method="post">
-        <input type="hidden" name="hikingid" value="<?= $post->getId(); ?>">
-        <input class="" name="deleteHikingForm" type="submit" value="Supprimer">
-    </form>
-        </td>
-         <td>                                                                                                                    
-           <a class="" href="<?= $base_uri[0]; ?>/public/admin/update/<?= $post->getId(); ?>">Modifier</a>                                                        
-                </td>
-            </tr>
-        <?php endforeach ?>
-</table>
-
-
+<main class="tableContainer">
+    <div class="card">
+        <div class="msgTable">
+            <?php
+            if (isset($data['infos'])) {    
+             echo $data['infos'];
+            }
+            ?>
+          <table class="customTable">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Titre</th>
+                <th>Durée</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                 <?php foreach ($data['posts'] as $key => $post) : ?>
+              <tr>
+                <td><img class="" src="<?= $base_uri[0]; ?>/public/assets/front/img/<?= $post->getImage(); ?>" alt=""></td>    
+                <td><?= $post->getTitle(); ?></td>
+                <td><?= $post->getDuration(); ?> h</td>
+                <td>
+                  <form class="" action="" method="post">
+                      <input type="hidden" name="hikingid" value="<?= $post->getId(); ?>">
+                      <input class="" name="deleteHikingForm" type="submit" value="Supprimer">
+                  </form>
+                  <a class="" href="<?= $base_uri[0]; ?>/public/admin/update/<?= $post->getId(); ?>">Modifier</a>
+                </td>    
+              </tr>
+            </tbody>
+            <?php endforeach ?>
+          </table>
+      </div>
+    </div>
+</main>    

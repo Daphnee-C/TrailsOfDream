@@ -10,10 +10,6 @@ class HikingListController extends MainController {
     public function renderHikingList() {
 
         $this->data = HikingModel::getPosts();
-        // on appelle la méthode render du MainController qui construit la page
         $this->render();
     }
-    
-    
-    
 }

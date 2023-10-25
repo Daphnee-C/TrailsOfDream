@@ -1,24 +1,24 @@
-<h1>Je suis la page contact</h1>
+<main class="formContainer">
+     <?php if (isset($data)) {
+         foreach ($data as $value) {
+             echo $value;
+         }
+      } ?>
 
- <?php if (isset($data)) {
-     foreach ($data as $value) {
-         echo $value;
-     }
-  } ?>
-
-<form action="" method="post">
-    
-    <input type="hidden" name="contactid" value=""/>
-    
-    <input type="text" name="name" placeholder="Nom" value="<?php if (!empty($_POST['name'])){
-        echo $_POST['name'];
-    } ?>">
-    <input type="text" name="mail" placeholder="Adresse mail" value="<?php if (!empty($_POST['mail'])){
-        echo $_POST['mail'];
-    } ?>">
-    <textarea name="message" rows="7" cols="50" placeholder="Votre message"> <?php if (!empty($_POST['message'])){
-        echo $_POST['message'];
-    } ?> </textarea>
-    <!--<input type="text" name="message" placeholder="Votre message"/>-->
-    <input name="contactForm" type="submit" value="Envoyer"/>
-</form>
+    <form class="user" action="" method="post">
+        
+        <h3>Contact</h3>
+        
+        <input type="hidden" name="contactid" value=""/>
+        <input type="text" name="name" placeholder="Nom" value="<?php if (!empty($_POST['name'])){
+            echo $_POST['name'];
+        } ?>">
+        <input type="text" name="mail" placeholder="Adresse mail" value="<?php if (!empty($_POST['mail'])){
+            echo $_POST['mail'];
+        } ?>">
+        <textarea name="message"  placeholder="Message"><?php if (!empty($_POST['message'])){
+            echo $_POST['message'];
+        } ?></textarea>
+        <input name="contactForm" type="submit" value="Envoyer"/>
+    </form>
+</main>

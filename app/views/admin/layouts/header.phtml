@@ -1,52 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Trails of Dream</title>
-    <link rel="stylesheet" href ="<?=$base_uri[0];?>/public/assets/style.css">
+    <link rel="icon" type="image/x-icon" href="<?=$base_uri[0];?>/public/assets/LogoTofD.png">
+    <link rel="stylesheet" href ="<?=$base_uri[0];?>/public/assets/style.min.css">
 </head>
+
 <body>
-   
-    <header>
-        <h1>Je suis le header de la page admin</h1>
-  
-    
-    <nav>
-   <div class="treecon">
-    <a href="#"><img src="<?=$base_uri[0];?>/public/assets/front/img/LogoTofD.png" alt="logo de Trails of Dream" width="50" height="50"></a>
-   
-   </div>
-
-   <div class="treenav">
-
-
-    <ul>
-     <li>
-      <a href="/TrailsOfDream/public/home">Accueil</a>
-      </li>
-      
-       <li>
-      <a href="<?= $base_uri[0]; ?>/public/admin/">Accueil admin</a>
-      </li>
-      
-      <li>
-       <a href="<?= $base_uri[0]; ?>/public/admin/add/">Ajouter une randonnée</a>
-      </li>
-      
-     
-      <li>
-       <a href="<?= $base_uri[0]; ?>/public/adminMessages">Consulter les messages</a>
-      </li>
-      
-      
-      <li>
-       <a href="<?= $base_uri[0]; ?>/public/adminUserList">Consulter la liste d'utilisateurs</a>
-      </li>
-      
-      <li> <a class="" href="<?= $base_uri[0]; ?>/public/logout">Déconnexion</a> </li>
-    </ul>
-    
-     <h1>Trails of Dream</h1>
+  <header>
+      <nav class="nav">
+            <div class="navContainer">
+                <div class="logo">
+                    <a href="/TrailsOfDream/public/home"> 
+                        <img src="<?=$base_uri[0];?>/public/assets/front/img/LogoTofD.png" alt="logo de Trails of Dream" width="50" height="50">
+                    </a>
+                </div>
+                <div class="navList" id="mainNavList">
+                  <ul>
+                   <li><a href="<?= $base_uri[0]; ?>/public/admin/admin">Accueil Admin</a></li>
+                   <li><a href="<?= $base_uri[0]; ?>/public/admin/add/">Ajout Rando</a></li>
+                   <li><a href="<?= $base_uri[0]; ?>/public/adminMessages">Messages</a></li>
+                   <li><a href="<?= $base_uri[0]; ?>/public/adminUserList">Liste Utilisateurs</a></li>
+                   <li><a class="" href="<?= $base_uri[0]; ?>/public/logout">Déconnexion</a></li>
+                  </ul>
+                </div> 
+                <div class="navButton">
+                    <button class="mainNavButton" id="navMediaButton">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+       </nav>
+       <div class="space"></div>
     </header>

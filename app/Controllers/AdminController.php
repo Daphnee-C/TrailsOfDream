@@ -12,8 +12,6 @@ class AdminController extends MainController
 {
     public function renderAdmin():void
     {
-        
-        
             $this->checkUserAuthorization(1);
             
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -32,9 +30,11 @@ class AdminController extends MainController
             if (isset($_POST["userListForm"])) {
                 $this->removeUser();
             }
+            if (isset($_POST["contactForm"])) {
+                $this->removeMessage();
+            }
         }
          
-       // La vue à rendre est admin. On la passe dans notre propriété viewType du controller parent
         
         $this->viewType = 'admin';
         if($this->view === 'adminMessages'){
@@ -48,13 +48,8 @@ class AdminController extends MainController
             $this->data['users'] = $users;
         }
         
-        
-        
-        // On vérifie si subPage existe
         if (isset($this->subPage)) {
-            // si subPage existe, on modifie la propriété viewType du controller parent
             $this->view = $this->subPage;
-            // si la view demandée === update
             if ($this->view === 'update') {
                 if (isset($_GET['id'])) {
                     $post = HikingModel::getHikingById($_GET['id']);
@@ -71,7 +66,6 @@ class AdminController extends MainController
         
         $this->render();
     }
-    
     
     public function addHiking(): void
     {
@@ -132,9 +126,9 @@ class AdminController extends MainController
          $hikingModel->setPosition($position);
          
          if ($hikingModel->updateHiking()){
-             $this->data[] = '<div class="alert alert-success" role="alert">Article enregistré avec succès</div>';
+             $this->data[] = '<div class="alertSuccess" role="alert">Article enregistré avec succès</div>';
          } else {
-             $this->data[] = '<div class="alert alert-danger" role="alert">Il s\'est produit une erreur</div>';
+             $this->data[] = '<div class="alertDanger" role="alert">Il s\'est produit une erreur</div>';
          }
     }
     
@@ -143,27 +137,34 @@ class AdminController extends MainController
         $hikingId = filter_input(INPUT_POST, 'hikingid', FILTER_SANITIZE_SPECIAL_CHARS);
         
         if (HikingModel::deleteHiking($hikingId)){
-            $this->data['info'] = '<div class="alert alert-success d-inline-block mx-4" role="alert">Article supprimé avec succès</div>';
+            $this->data['info'] = '<div class="alertSuccess" role="alert">Article supprimé avec succès</div>';
         } else {
-            $this->data['info'] = '<div class="alert alert-danger" role="alert">Il s\'est produit une erreur</div>';
+            $this->data['info'] = '<div class="alertDanger" role="alert">Il s\'est produit une erreur</div>';
         }
     }
     
     public function removeUser(): void
     {
-        $currentUser = $user->getUserById();
-        if($currentUser->getRole()===1){
         $userId = filter_input(INPUT_POST, 'userListid', FILTER_SANITIZE_SPECIAL_CHARS);
         
         if (UserModel::deleteUser($userId)){
-            $this->data['info'] = '<div>Utilisateur supprimé avec succès</div>';
+            $this->data['info'] = '<div class="alertSuccess" role="alert">Utilisateur supprimé avec succès</div>';
         } else {
-            $this->data['info'] = '<div class="alert alert-danger" role="alert">Il s\'est produit une erreur</div>';
+            $this->data['info'] = '<div class="alertDanger" role="alert role="alert">Il s\'est produit une erreur</div>';
         }
+    }
+    
+    public function removeMessage(): void
+    {
+        
+        $contactId = filter_input(INPUT_POST, 'contactid', FILTER_SANITIZE_SPECIAL_CHARS);
+        
+        if (ContactModel::deleteMessage($contactId)){
+            $this->data['info'] = '<div class="alertSuccess" role="alert">Utilisateur supprimé avec succès</div>';
+        } else {
+            $this->data['info'] = '<div class="alertDanger" role="alert">Il s\'est produit une erreur</div>';
         }
-        else {
-            $this->data['info'] = '<div class="alert alert-danger" role="alert">Il s\'est produit une erreur</div>'; 
-        }
+        
     }
 
 }

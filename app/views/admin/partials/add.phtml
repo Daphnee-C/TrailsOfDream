@@ -1,32 +1,25 @@
-<h1 class="">Ajouter une randonnée</h1>
-
-
-<?php
-            // Si data n'est pas vide sur cette page, c'est qu'il y'a un message à afficher
- if (isset($data)) {
-    foreach ($data as $key => $message) {
-    echo $message;
-   }
- }
-?>
+<main class="formContainer">
+    <h1>Ajouter une randonnée</h1>
+    <?php
+     if (isset($data)) {
+        foreach ($data as $key => $message) {
+        echo $message;
+       }
+     }
+    ?>
      
-    <form class="" action="" method="post">
-    <input type="hidden" name="hikingid" value=""/>
-    
-    <input type="text" name="image" placeholder="nom de de l'image de la vignette (ex: nom.jpg)" class="" value="">
-    <!--<input type="file" id="image" name="image" accept="image/*">-->
-    <input type="text" name="title" class="" placeholder="Titre de l'article" value="">
-    <textarea name="description" id="" rows="10" class="" placeholder="Contenu de l'article "></textarea>
-    <input type="text" name="level" placeholder="Level"/>
-    <input type="number" name="ascent" placeholder="Ascent"/>
-    <input type="number" name="descent" placeholder="Descent"/>
-    <input type="number" name="duration" placeholder="Duration"/>
-    <input type="number" name="length" placeholder="Length"/>
-    <input type="text" name="position" placeholder="Position"/>
-                <!-- on n'oublie pas le name sur le bouton submit pour identifier le formulaire dans le AdminController  -->
+    <form class="user" action="" method="post">
+        <input type="hidden" name="hikingid" value=""/>
+        <input type="text" name="image" placeholder="Nom de l'image (ex: nom.jpg)" class="" value="">
+        <input type="text" name="title" class="" placeholder="Titre de l'article" value="">
+        <textarea name="description" id="" rows="10" class="" placeholder="Contenu de l'article "></textarea>
+        <input type="text" name="level" placeholder="Niveau"/>
+        <input type="number" name="ascent" placeholder="Dénivelé positif"/>
+        <input type="number" name="descent" placeholder="Dénivelé négatif"/>
+        <input type="number" name="duration" placeholder="Durée"/>
+        <input type="number" name="length" placeholder="Longueur"/>
+        <input type="text" name="position" placeholder="Position"/>
+        <!-- bouton submit pour identifier le formulaire dans le AdminController  -->
         <input type="submit" class="" name="addHikingForm" value="Créer l'article">
-            
     </form>
-
-
-   
+</main>

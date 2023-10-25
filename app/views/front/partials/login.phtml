@@ -1,25 +1,17 @@
-<h1>Je suis la page de connexion</h1>
-
-
-<?php if (isset($data)) {
-    foreach ($data as $value) {
-        echo $value;
-    }
-} ?>
-
-
-<form class="user" action="" method="post">
-
-    <input type="mail" name="mail" class="" id="" aria-describedby="emailHelp" placeholder="Enter Mail Address...">
-   
-    <input type="password" name="password" class="" id="" placeholder="Password">
-   
-    <input type="checkbox" class="custom-control-input" id="customCheck">
-    <label class="custom-control-label" for="customCheck">Remember Me</label>
-
-    <input type="submit" name="loginForm" class="" value="connexion">
-
-
-</form>
- 
-<a class="" href="/TrailsOfDream/public/register">Create an Account!</a>
+<main class="formContainer">
+        <?php if (isset($data)) {
+            foreach ($data as $value) {
+                echo $value;
+            }
+        } ?>
+        
+        <form class="user" method="post">
+            <h3>Connexion</h3>
+            <input type="email" name="mail" placeholder="Mail">
+            <input type="password" name="password" placeholder="Mot de passe">
+            <input type="submit" name="loginForm" value="Connexion">
+        </form>
+         <div class="logDiv">
+            <a class="btnLog" href="/TrailsOfDream/public/register">Créer un compte</a>
+        </div>
+</main>

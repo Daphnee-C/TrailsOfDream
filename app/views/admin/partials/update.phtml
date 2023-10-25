@@ -1,25 +1,24 @@
-<h1 class="">Modifier une randonnée</h1>
+<h1>Modifier une randonnée</h1>
 
-<?php
-            // si $data['infos'] n'est pas vide, c'est qu'il y'a un message à afficher            
-            if (isset($data['infos'])) {
-                echo $data['infos'];
-            }
-            ?>
-
- <?php if (!isset($data['error'])) : ?>
-<form class="row" action="" method="post">
-   <input type="hidden" name="hikingid" value="<?= $data['post']->getId(); ?>">
-   <input type="text" name="image" placeholder="nom de de l'image de la vignette (ex: nom.jpg)" class="" value="<?= $data['post']->getImage(); ?>">
-    <input type="text" name="title" class="" placeholder="Titre de l'article" value="<?= $data['post']->getTitle(); ?>">
-    <textarea name="description" id="" rows="10" class="" placeholder="Contenu de l'article"><?= $data['post']->getDescription(); ?></textarea>
-    <input type="text" name="level" placeholder="Level" value="<?= $data['post']->getLevel(); ?>"/>
-    <input type="number" name="ascent" placeholder="Ascent" value="<?= $data['post']->getAscent(); ?>"/>
-    <input type="number" name="descent" placeholder="Descent" value="<?= $data['post']->getDescent(); ?>"/>
-    <input type="number" name="duration" placeholder="Duration" value="<?= $data['post']->getDuration(); ?>"/>
-    <input type="number" name="length" placeholder="Length" value="<?= $data['post']->getLength(); ?>"/>
-    <input type="text" name="position" placeholder="Position" value="<?= $data['post']->getPosition(); ?>"/>
-                <!-- on n'oublie pas le name sur le bouton submit pour identifier le formulaire dans le AdminController  -->
-    <input type="submit" class="" name="updateHikingForm" value="Modifier l'article"/>
-</form>
-<?php endif; ?>
+<main class="formContainer">
+    <?php
+      if (isset($data['infos'])) {
+      echo $data['infos'];
+      }
+      ?>
+     <?php if (!isset($data['error'])) : ?>
+    <form class="user" action="" method="post">
+       <input type="hidden" name="hikingid" value="<?= $data['post']->getId(); ?>">
+       <input type="text" name="image" placeholder="nom de de l'image de la vignette (ex: nom.jpg)" class="" value="<?= $data['post']->getImage(); ?>">
+        <input type="text" name="title" class="" placeholder="Titre de l'article" value="<?= $data['post']->getTitle(); ?>">
+        <textarea name="description" id="" rows="10" class="" placeholder="Contenu de l'article"><?= $data['post']->getDescription(); ?></textarea>
+        <input type="text" name="level" placeholder="Level" value="<?= $data['post']->getLevel(); ?>"/>
+        <input type="number" name="ascent" placeholder="Ascent" value="<?= $data['post']->getAscent(); ?>"/>
+        <input type="number" name="descent" placeholder="Descent" value="<?= $data['post']->getDescent(); ?>"/>
+        <input type="number" name="duration" placeholder="Duration" value="<?= $data['post']->getDuration(); ?>"/>
+        <input type="number" name="length" placeholder="Length" value="<?= $data['post']->getLength(); ?>"/>
+        <input type="text" name="position" placeholder="Position" value="<?= $data['post']->getPosition(); ?>"/>
+        <input type="submit" class="" name="updateHikingForm" value="Modifier l'article"/>
+    </form>
+    <?php endif; ?>
+</main>

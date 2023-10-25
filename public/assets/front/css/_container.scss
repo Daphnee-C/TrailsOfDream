@@ -6,8 +6,25 @@
     max-height: auto;
     margin: auto;
     padding: 10px;
-}
 
+    .logDiv {
+        margin: 2em auto;
+        width: 100%;
+        .btnLog {
+            text-decoration: none;
+            font-size: 1em;
+            color: #000000;
+            text-align: center;
+            border: 1px solid black;
+            padding: 0.3rem;
+            margin: 0.3rem;
+            background-color: #30797A;
+            color: #fff;
+        }
+
+    }
+
+}
 
 /*CAROUSSEL SUR PAGE HICKING LIST*/
 
@@ -22,9 +39,9 @@ img {
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: auto;
+    max-width: 45em;
+    margin: auto;
     position: relative;
-    margin: 4rem 0rem 0rem 0rem;
 }
 
 /* Boutons precedent et suivant */
@@ -120,39 +137,32 @@ img {
 
 .card {
     padding: 1rem;
-    margin-top: 4rem;
+    margin-top: 0.5rem;
     border: #44476a;
     font-size: .875rem;
     border: .0625rem solid #d1d9e6;
     box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
     border-radius: .55rem;
     background-color: #e6e7ee;
+    object-fit: cover;
+    object-position: bottom;
+
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+
 }
 
-
-.ellipsis {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    white-space: wrap;
-    height: 3em;
-    /* Hauteur équivalente à deux lignes de texte */
-    line-height: 1em;
-    /* Espacement entre les lignes de texte */
-    /*text-overflow: ellipsis;*/
-}
-
-
-/*.hikingImg {
-
-    width: 150px;
-    height: 150px;
-
-}
-*/
 
 .bigCardBox {
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -161,8 +171,6 @@ img {
 }
 
 .littleCardBox {
-    /*width: 30%;*/
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     width: 18em;
@@ -170,29 +178,63 @@ img {
     justify-content: space-evenly;
     align-items: flex-start;
     margin: 1rem auto;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+    border-radius: .55rem;
+
 
     img {
 
         width: 100%;
-        height: 15rem;
+        height: 100%;
+        object-fit: cover;
+        border-radius: .55rem .55rem .0rem .0rem;
     }
 
-    a {
+    .titleLink {
         text-decoration: none;
-        font-size: 0.8em;
         color: #000000;
-        text-align:center;
+    }
+
+    .midCardBox {
+        padding: 0.5em;
+
+        p {
+
+            text-align: justify;
+
+        }
+
+    }
+
+    .btnCard {
+        text-decoration: none;
+        font-size: 1em;
+        color: #000000;
+        text-align: center;
+        border-radius: 5px;
+        padding: 0.3rem;
+        margin: 0.3rem;
+        background-color: #30797A;
+        color: #fff;
     }
 }
 
 
-
 /* CAROUSSEL */
 
-@media only screen and (max-width: 300px) {
-    .prev,
-    .next,
-    .text {
-        font-size: 11px
+@media only screen and (max-width: 330px) {
+    .input,
+    textarea {
+        padding: 10px 30px;
+        border-radius: 15px;
+        font-weight: bolder;
+        color: #000000;
+        margin: 1em 0em 1em 0;
+
+        ::placeholder {
+            color: #000000;
+            opacity: 3;
+        }
+
     }
 }

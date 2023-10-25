@@ -1,8 +1,10 @@
-<h1>Je suis la page de détail des articles</h1>
-
-
- <h1><?= $data->getTitle(); ?></h1>  
- 
- <img src="<?= $base_uri[0];?>/public/assets/front/img/<?= $data->getImage(); ?>">
- <p><?= $data->getDescription(); ?></p>
+<main class="container">
+  <div class="card">
+    <h1><?= $data->getTitle(); ?></h1>
+    <div class="spaceArt"></div>
+    <img src="<?= $base_uri[0];?>/public/assets/front/img/<?= $data->getImage(); ?>" alt="photos paysages de montagne et forêt de l'ile de la Réunion">
+    <div class="spaceArt"></div>
+    <p><?= $data->getDescription(); ?></p>
+  </div>
+</main>
  

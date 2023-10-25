@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 1rem;
   transition: all 0.4s;
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
@@ -10,7 +11,6 @@
 .navContainer {
   margin-left: 5%;
   margin-right: 5%;
-
 }
 
 /* Navbar section */
@@ -23,7 +23,6 @@
   text-align: center;
   background-color: #30797A;
   z-index: 1;
-
 }
 
 .nav .logo {
@@ -145,7 +144,30 @@
   transform: rotate3d(0, 0, 1, -20deg);
 }
 
-/* Home section */
+.space {
+  height: 65px;
+}
+
+.spaceArt {
+  /*height: 15px;*/
+  margin-bottom: 1em;
+}
+
+h3 {
+  color: #fff;
+  font-size: 1.3em
+}
+
+h2 {
+  font-size: 1.3em;
+  margin: 0.3em 0em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Accueil*/
 
 .home {
   width: 100%;
